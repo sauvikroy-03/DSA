@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Pattern19 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-
         System.out.println("Enter the number of rows ");
         int no_of_rows= sc.nextInt();
         System.out.println("Enter the number of columns ");
@@ -18,7 +17,6 @@ public class Pattern19 {
                 }
                 for(int k=0;k<=(no_of_columns-2)*2;k++){
                     System.out.print(" ");
-
                 }
                 for(int k=1;k>0;k--){
                     System.out.print("*");
