@@ -22,7 +22,6 @@ public class RecursiveBubbleSort {
                 didSwap = 1;
             }
         }
-
         System.out.println(Arrays.toString(arr));
         if (didSwap == 0) {
             return;
