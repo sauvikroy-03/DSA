@@ -15,6 +15,7 @@ public class SecondLargestElement {
                 //this way second largest will hold previous value of largest
                 secondLargest=largest;
                 largest=arr[i];
+//f
             }
             else if (arr[i]<largest && arr[i]>secondLargest){
                 //checks in the whole array that if a number lesser than largest and greater than previous value of largest exists...
