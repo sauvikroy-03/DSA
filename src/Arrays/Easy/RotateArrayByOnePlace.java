@@ -6,14 +6,11 @@ public class RotateArrayByOnePlace {
 
     public static void main(String[] args) {
         int[]arr={1,2,7};
-        int k=1;
-        rotate(arr,k);
-    }
-    public static void rotate(int []arr,int k) {
 
+        rotate(arr);
+    }
+    public static void rotate(int []arr) {
         if (arr.length > 0 ) {
-            k=k%arr.length;
-            for (int i = 0; i < k; i++) {
                 int temp = arr[0];
                 for (int j = 0; j < arr.length - 1; j++) {
                     arr[j] = arr[j + 1];
@@ -24,5 +21,4 @@ public class RotateArrayByOnePlace {
             System.out.println(Arrays.toString(arr));
         }
     }
-}
 
