@@ -13,8 +13,8 @@ public class RotateArrayByKPlaces {
 
     public static  int[] getResultantArray(int[]arr,int k){
         k=k%arr.length;
-reverse(arr,0,k-1);
-reverse(arr,k,arr.length-1);
+    reverse(arr,0,k);
+reverse(arr,k+1,arr.length-1);
  return reverse(arr,0,arr.length-1);
 
     }
