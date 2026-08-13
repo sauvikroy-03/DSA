@@ -1,8 +1,5 @@
 package Arrays.Easy;
 
-import sorting2.QuickSort;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 
 
