@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class FindMajorityElementOccuringNby2times {
 
     public static void main(String[] args) {
-        int[]arr={1, 2, 2,1,5,1};
+        int[]arr={1, 2, 2,5,2,1,2};
         int res=findMajorityElement(arr);
         System.out.println(res);
     }
@@ -27,7 +27,7 @@ public class FindMajorityElementOccuringNby2times {
            }
         }
 
-
+//
         int actualCount = 0;
         for (int num : nums) {
             if (num == element) {
