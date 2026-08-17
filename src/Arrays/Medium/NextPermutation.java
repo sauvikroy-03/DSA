@@ -8,43 +8,43 @@ public class NextPermutation {
         find(ar);
         //exp=2,1,3
     }
-    public static void find(int[]arr){
+    public static void find(int[]nums){
         int index=-1;
         //find the breakpoint
-        for(int j=arr.length-1;j>0;j--){
-            if(arr[j]>arr[j-1]){
+        for(int j=nums.length-1;j>0;j--){
+            if(nums[j]>nums[j-1]){
                 index=j-1;
                 break;
             }
         }
         //if a breakpoint exist find the next biggest element after number at index
         if(index!=-1) {
-            for (int j = arr.length - 1; j >= 0; j--) {
+            for (int j = nums.length - 1; j >= 0; j--) {
                 System.out.println("j");
-                if (arr[j] > arr[index]) {
-                    int temp = arr[index];
-                    arr[index] = arr[j];
-                    arr[j] = temp;
+                if (nums[j] > nums[index]) {
+                    int temp = nums[index];
+                    nums[index] = nums[j];
+                    nums[j] = temp;
                     break;
                 }
             }
         }
         //then reverse the remaining element
-        reverse(arr,index+1);
-        //Now reverse the array from index to n-1  from right;
+        reverse(nums,index+1);
+        //Now reverse the numsay from index to n-1  from right;
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(nums));
     }
 
-    public static void reverse(int[]arr,int index){
-        int k=((arr.length-1)-index)-1%arr.length;
+    public static void reverse(int[]nums,int index){
+        int k=((nums.length-1)-index)-1%nums.length;
         int low=index;
-        int high=arr.length-1;
+        int high=nums.length-1;
 
         while(low<high){
-            int temp=arr[low];
-            arr[low]=arr[high];
-            arr[high]=temp;
+            int temp=nums[low];
+            nums[low]=nums[high];
+            nums[high]=temp;
             low++;
             high--;
 
