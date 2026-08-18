@@ -51,11 +51,15 @@ public class LongestConsecutiveSequenceInAnArray {
         System.out.println(Arrays.toString(arr));
     }
     public static void find(int[]arr){
-        int count=0;
-        int prev=0;
-        for (int i=0;i<arr.length;i++){
+        int count=1;
 
+        for (int i=0;i<arr.length-1;i++){
+            if(arr[i]+1==arr[i+1]){
+                count++;
+
+            }
         }
+        System.out.println(count);
 
     }
 }
