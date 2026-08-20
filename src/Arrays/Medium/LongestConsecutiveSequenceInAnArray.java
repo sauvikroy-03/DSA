@@ -6,60 +6,73 @@ import java.util.Arrays;
 public class LongestConsecutiveSequenceInAnArray {
 
     public static void main(String[] args) {
-    int[]arr={100, 4, 200, 1, 3, 2};
-    mergeSort(arr,0,arr.length-1);
-    find(arr);
-
-
+    int[]nums={100, 4, 200, 1, 3, 2};
+    mergeSort(nums,0,nums.length-1);
+    find(nums);
     }
-    public static void mergeSort(int[]arr,int low,int high){
+    public static void mergeSort(int[]nums,int low,int high){
         if(low>=high){
             return;
         }
         int mid=(low+high)/2;
-        mergeSort(arr,low,mid);
-        mergeSort(arr,mid+1,high);
-        merge(arr,low,mid,high);
+        mergeSort(nums,low,mid);
+        mergeSort(nums,mid+1,high);
+        merge(nums,low,mid,high);
     }
-    public static void merge(int[]arr,int low,int mid,int high){
+    public static void merge(int[]nums,int low,int mid,int high){
         int left=low;
         int right= mid+1;
         ArrayList<Integer> list=new ArrayList<>();
 
 
         while (left<=mid&&right<=high){
-            if(arr[left]<=arr[right]){
-                list.add(arr[left]);
+            if(nums[left]<=nums[right]){
+                list.add(nums[left]);
                 left++;
             }
-            else if (arr[right]<=arr[left]){
-                list.add(arr[right]);
+            else if (nums[right]<=nums[left]){
+                list.add(nums[right]);
                 right++;
             }
         }
         while (left<=mid){
-            list.add(arr[left]);
+            list.add(nums[left]);
             left++;
         }
         while (right<=high){
-            list.add(arr[right]);
+            list.add(nums[right]);
             right++;
         }
         for (int i = low; i <= high; i++) {
-            arr[i] = list.get(i - low);
+            nums[i] = list.get(i - low);
         }
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(nums));
     }
-    public static void find(int[]arr){
-        int count=1;
 
-        for (int i=0;i<arr.length-1;i++){
-            if(arr[i]+1==arr[i+1]){
-                count++;
-
+        public static int find(int[] nums) {
+            if (nums.length == 0) {
+                System.out.println(0);
+                return 0;
             }
-        }
-        System.out.println(count);
 
-    }
+            int maxCount = 1;
+            int count = 1;
+
+            for (int i = 0; i < nums.length - 1; i++) {
+                if (nums[i] + 1 == nums[i + 1]) {
+                    count++;
+                } else if (nums[i] == nums[i + 1]) {
+                    continue;
+                } else {
+                    count = 1;
+                }
+
+                if (count > maxCount) {
+                    maxCount = count;
+                }
+            }
+
+            return maxCount;
+        }
+
 }
