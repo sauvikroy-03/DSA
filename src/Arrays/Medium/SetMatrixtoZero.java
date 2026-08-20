@@ -27,9 +27,17 @@ public class SetMatrixtoZero {
                 }
                 selectedrow=-1;
             }
-            if()
+
         }
 
+        //set cols to 0
+        for(int i=0;i<row;i++){
+            for(int j=0;j<row;j++){
+                if(j==selectedcol){
+                    arr[i][selectedcol]=0;
+                }
+            }
+        }
 
 
         System.out.println(Arrays.deepToString(arr));
